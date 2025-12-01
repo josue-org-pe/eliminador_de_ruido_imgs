@@ -10,9 +10,8 @@ st.title(" SIMULADOR MTC-A ")
 
 tabs = st.tabs([" TEXTO ", " IMÁGENES", " EXCEL"])
 
-# =========================
 # FUNCIONES HAMMING
-# =========================
+
 def hamming_encode_bits(bits):
     salida = ""
     for i in range(0, len(bits), 4):
@@ -50,16 +49,14 @@ def bits_to_bytes(bits):
         out.append(int(bits[i:i+8], 2))
     return bytes(out)
 
-# =====================================================
 # Para  TEXTO — 3 FASES
-# =====================================================
 with tabs[0]:
     st.header(" TEXTO")
 
-    modo = st.selectbox("Modo:", [" Escribir", " Subir .txt"])
+    modo = st.selectbox("Modo:", ["Escribir", " Subir .txt"])
     texto = ""
 
-    if modo == "✍ Escribir":
+    if modo == "Escribir":
         texto = st.text_area("Escriba el texto:", height=180)
     else:
         archivo = st.file_uploader("Sube archivo TXT", type=["txt"])
@@ -109,9 +106,7 @@ with tabs[0]:
             st.write("Errores finales:", err_final)
             st.write("BER:", round(ber, 6))
 
-# =====================================================
 # Para  IMÁGENES — RUIDO
-# =====================================================
 with tabs[1]:
     st.header(" IMÁGENES — Ruido y Recuperación")
 

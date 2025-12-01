@@ -1,6 +1,6 @@
 streamlit
 numpy
 pandas
-opencv-python-headless
-Pillow
-open
+Pillow==12.0.0
+openpyxl
+opencv-python-headless==4.10.0.84
